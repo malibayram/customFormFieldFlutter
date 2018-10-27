@@ -10,6 +10,38 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.indigo,
+              width: 1.5,
+              style: BorderStyle.solid,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(15.0),
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.indigo,
+              width: 1.5,
+              style: BorderStyle.solid,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(15.0),
+            ),
+          ),
+          labelStyle: TextStyle(
+            color: Colors.indigo,
+            fontFamily: "Merriweather-Black",
+            fontWeight: FontWeight.bold,
+          ),
+          helperStyle: TextStyle(
+            color: Colors.indigo,
+            fontFamily: "Merriweather-Black",
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       home: new MyHomePage(),
     );
@@ -45,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
         top: false,
         bottom: false,
         child: Container(
+          height: double.maxFinite,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
@@ -107,42 +140,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.indigo,
-                          width: 1.5,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.indigo,
-                          width: 1.5,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
                       prefixIcon: Icon(
                         Icons.email,
                         color: Colors.black,
                       ),
                       labelText: "Email Address",
                       helperText: "Your email address",
-                      labelStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontFamily: "Merriweather-Black",
-                        fontWeight: FontWeight.bold,
-                      ),
-                      helperStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontFamily: "Merriweather-Black",
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                     maxLines: 1,
                   ),
@@ -150,42 +153,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.indigo,
-                          width: 1.5,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.indigo,
-                          width: 1.5,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
                       prefixIcon: Icon(
                         Icons.contacts,
                         color: Colors.black,
                       ),
                       labelText: "First Name",
                       helperText: "Your first name",
-                      labelStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontFamily: "Merriweather-Black",
-                        fontWeight: FontWeight.bold,
-                      ),
-                      helperStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontFamily: "Merriweather-Black",
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                     maxLines: 1,
                   ),
@@ -193,42 +166,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.indigo,
-                          width: 1.5,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.indigo,
-                          width: 1.5,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
                       prefixIcon: Icon(
                         Icons.contacts,
                         color: Colors.black,
                       ),
                       labelText: "Last Name",
                       helperText: "Your Last Name",
-                      labelStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontFamily: "Merriweather-Black",
-                        fontWeight: FontWeight.bold,
-                      ),
-                      helperStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontFamily: "Merriweather-Black",
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                     maxLines: 1,
                   ),
@@ -236,26 +179,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.indigo,
-                          width: 1.5,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.indigo,
-                          width: 1.5,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
                       prefixIcon: Icon(
                         Icons.call,
                         color: Colors.black,
@@ -267,16 +190,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       labelText: "Telephone Number",
                       helperText: "Your Telephone number",
-                      labelStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontFamily: "Merriweather-Black",
-                        fontWeight: FontWeight.bold,
-                      ),
-                      helperStyle: TextStyle(
-                        color: Colors.indigo,
-                        fontFamily: "Merriweather-Black",
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                     maxLines: 1,
                   ),
@@ -290,4 +203,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-//on Tuesday 
+//on Tuesday
