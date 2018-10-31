@@ -31,6 +31,26 @@ class MyApp extends StatelessWidget {
               Radius.circular(15.0),
             ),
           ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.red,
+              width: 1.5,
+              style: BorderStyle.solid,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(15.0),
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.red,
+              width: 1.5,
+              style: BorderStyle.solid,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(15.0),
+            ),
+          ),
           labelStyle: TextStyle(
             color: Colors.indigo,
             fontFamily: "Merriweather-Black",
@@ -60,6 +80,22 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController firstNameCtrlr = TextEditingController();
   final TextEditingController lastNameCtrlr = TextEditingController();
   final TextEditingController phoneNumberCtrlr = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    emailCtrlr.dispose();
+  }
+
+  void checkValue() {
+    if (_formKey.currentState.validate()) {
+      print("Email Address: ${emailCtrlr.text}");
+      print("Email Address: ${firstNameCtrlr.text}");
+      print("Email Address: ${lastNameCtrlr.text}");
+      print("Email Address: ${phoneNumberCtrlr.text}");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -138,6 +174,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(height: 20.0),
                   TextFormField(
+                    controller: emailCtrlr,
+                    validator: (value) {
+                      if (value.length < 3) {
+                        print(value);
+                        return "Please write your email address more than 3 letters";
+                      }
+                    },
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       prefixIcon: Icon(
@@ -151,6 +194,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(height: 20.0),
                   TextFormField(
+                    controller: firstNameCtrlr,
+                    validator: (value) {
+                      if (value.length < 3) {
+                        print(value);
+                        return "Please write your first name more than 3 letters";
+                      }
+                    },
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       prefixIcon: Icon(
@@ -164,6 +214,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(height: 20.0),
                   TextFormField(
+                    controller: lastNameCtrlr,
+                    validator: (value) {
+                      if (value.length < 3) {
+                        print(value);
+                        return "Please write last name more than 3 letters";
+                      }
+                    },
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       prefixIcon: Icon(
@@ -177,6 +234,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(height: 20.0),
                   TextFormField(
+                    controller: phoneNumberCtrlr,
+                    validator: (value) {
+                      if (value.length < 3) {
+                        print(value);
+                        return "Please write your phone number more than 3 letters";
+                      }
+                    },
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       prefixIcon: Icon(
@@ -193,6 +257,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     maxLines: 1,
                   ),
+                  RaisedButton(
+                    onPressed: checkValue,
+                    child: Text("Submit"),
+                  ),
                   //const SizedBox(height: 30.0),
                 ],
               ),
@@ -204,3 +272,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 //on Tuesday
+class checkString {
+  
+}
